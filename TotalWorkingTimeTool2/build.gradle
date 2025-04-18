@@ -1,0 +1,55 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+group 'com.freelance_agent.workingtime'
+version '1.0'
+
+dependencies {
+    implementation 'org.slf4j:slf4j-api:1.7.36' // SLF4JのAPI
+    implementation 'ch.qos.logback:logback-classic:1.2.11' // LogbackはSLF4J
+    implementation 'org.projectlombok:lombok:1.18.24'
+    implementation 'org.apache.commons:commons-csv:1.14.0'
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+	testImplementation 'org.mockito:mockito-inline:4.0.0'
+    testImplementation 'org.mockito:mockito-core:4.0.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+}
+
+tasks.withType(JavaCompile) {options.encoding = 'UTF-8'}
+tasks.withType(Exec) {jvmArgs(["-Dfile.encoding=UTF-8"])}
+
+tasks.test {
+	useJUnitPlatform() // JUnit 5を使用
+	jvmArgs(["-Dfile.encoding=UTF-8"])
+}
+
+tasks.withType(Javadoc) {
+    options.encoding = 'UTF-8' // JavaDocの文字コードをUTF-8に指定
+    options.addStringOption('charSet', 'UTF-8') // HTMLファイルの文字コードをUTF-8に指定
+}
+
+application {
+    mainClassName = 'com.freelance_agent.workingtime.main.Main'
+}
+
+
+jar {
+    manifest {
+        attributes(
+            'Main-Class': 'com.freelance_agent.workingtime.main.Main'
+        )
+    }
+    duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+    // Fat JARを作成するための設定
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    
+}
+
