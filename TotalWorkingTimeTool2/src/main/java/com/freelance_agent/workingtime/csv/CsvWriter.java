@@ -1,7 +1,9 @@
 package com.freelance_agent.workingtime.csv;
 
-import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.List;
 
 import org.apache.commons.csv.CSVFormat;
@@ -26,7 +28,7 @@ public class CsvWriter {
 	 * @param append boolean 追記モード {@code true}:追記 {@code false}:新規
 	 */
 	public void writeCsv(String fileName, List<WorkRecord> records, boolean append) {
-		try (CSVPrinter printer = new CSVPrinter(new FileWriter(fileName, append), CSVFormat.EXCEL)) {
+		try (CSVPrinter printer = new CSVPrinter(new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileName, append),"UTF-8")), CSVFormat.DEFAULT)) {
 		    printer.printRecord("社員番号","名前","対象年月","合計勤務時間");
 		    for(WorkRecord record: records) {
 		    	printer.printRecord(record.getEmployeeId(), record.getEmployeeName(), record.getWorkYearMonth(), record.getWorkingTime());

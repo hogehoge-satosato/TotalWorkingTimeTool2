@@ -47,7 +47,7 @@ public class Validator {
 			return false;
 		}
 		
-		if(!record.get(3).matches("[1-9][0-9]{0,2}")) {
+		if(!record.get(3).matches("\\d{1,3}")) {
 			log.warn("勤務時間桁数チェック ファイル名：{} 行：{}", fileName, row);
 			return false;
 		}
