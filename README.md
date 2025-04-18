@@ -6,6 +6,13 @@
 1. コマンド実行  
 `java -jar TotalWorkingTimeTool2-1.0.jar CSVファイルパス N`
 
+## Library
+- org.slf4j:slf4j-api:1.7.36
+- ch.qos.logback:logback-classic:1.2.11
+- org.projectlombok:lombok:1.18.24
+- org.apache.commons:commons-csv:1.14.0
+- org.apache.commons:commons-lang3:3.12.0
+
 ## 課題内容
 勤務時間集計プログラム  
 ■1. 概要
