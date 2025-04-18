@@ -1,10 +1,10 @@
-# TotalWorkingTimeTool
+# TotalWorkingTimeTool2
 20250416課題　勤務時間集計ツール
 
 ## USAGE
-1. TotalWorkingTimeTool-1.0.jarをダウンロード
+1. TotalWorkingTimeTool2-1.0.jarをダウンロード
 1. コマンド実行  
-`java -jar TotalWorkingTimeTool-1.0.jar CSVファイルパス N`
+`java -jar TotalWorkingTimeTool2-1.0.jar CSVファイルパス N`
 
 ## 課題内容
 勤務時間集計プログラム
