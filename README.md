@@ -4,7 +4,7 @@
 ## USAGE
 1. TotalWorkingTimeTool2-1.0.jarをダウンロード
 1. コマンド実行  
-`java -jar TotalWorkingTimeTool2-1.0.jar CSVファイルパス N` 新規ファイル作成
+`java -jar TotalWorkingTimeTool2-1.0.jar CSVファイルパス N` 新規ファイル作成  
 `java -jar TotalWorkingTimeTool2-1.0.jar CSVファイルパス A` ファイルに追記
 
 ## Library
