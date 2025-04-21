@@ -44,7 +44,7 @@ public class CsvReader {
 		int row = 0;
 		int rrow = 0;
 		//CSV
-		try (CSVParser parser = CSVFormat.DEFAULT.builder().setIgnoreHeaderCase(false).get().parse(
+		try (CSVParser parser = CSVFormat.DEFAULT.builder().setIgnoreEmptyLines(false).get().parse(
 	            new BufferedReader(new InputStreamReader(new FileInputStream( fileName), "UTF-8")))) {
 	        boolean firstflg = true;
 	        

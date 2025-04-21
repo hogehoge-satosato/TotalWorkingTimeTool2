@@ -22,11 +22,9 @@ dependencies {
 }
 
 tasks.withType(JavaCompile) {options.encoding = 'UTF-8'}
-tasks.withType(Exec) {jvmArgs(["-Dfile.encoding=UTF-8"])}
 
 tasks.test {
 	useJUnitPlatform() // JUnit 5を使用
-	jvmArgs(["-Dfile.encoding=UTF-8"])
 }
 
 tasks.withType(Javadoc) {
