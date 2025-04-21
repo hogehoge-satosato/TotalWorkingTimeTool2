@@ -2,7 +2,6 @@ package com.freelance_agent.workingtime.dto;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.RequiredArgsConstructor;
 
 /**
  * CSVレコードクラス
@@ -13,14 +12,13 @@ import lombok.RequiredArgsConstructor;
  */
 
 @EqualsAndHashCode
-@RequiredArgsConstructor
 @Data
 public class WorkRecord {
 	private final String employeeId;
 	private final String employeeName;
 	@EqualsAndHashCode.Exclude
 	private final String workDate;
-	private String workYearMonth;
+	private final String workYearMonth;
 	@EqualsAndHashCode.Exclude
 	private int workingTime;
 	

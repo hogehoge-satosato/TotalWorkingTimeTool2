@@ -18,10 +18,20 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
 	testImplementation 'org.mockito:mockito-inline:4.0.0'
     testImplementation 'org.mockito:mockito-core:4.0.0'
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
+    // JUnit 4 (Vintage Engine)
+    testImplementation 'org.junit.vintage:junit-vintage-engine:5.9.3'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.mockito:mockito-core:4.11.0'
+    testImplementation 'org.powermock:powermock-api-mockito2:2.0.9'
+    testImplementation 'org.powermock:powermock-module-junit4:2.0.9'
+
+
+    
 }
 
 tasks.withType(JavaCompile) {options.encoding = 'UTF-8'}
+
 
 tasks.test {
 	useJUnitPlatform() // JUnit 5を使用
