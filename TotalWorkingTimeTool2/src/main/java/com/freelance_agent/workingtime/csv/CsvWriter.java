@@ -29,7 +29,7 @@ public class CsvWriter {
 	 */
 	public void writeCsv(String fileName, List<WorkRecord> records, boolean append) {
 		try (CSVPrinter printer = new CSVPrinter(new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileName, append),"UTF-8")), CSVFormat.DEFAULT)) {
-		    printer.printRecord("社員番号","名前","対象年月","合計勤務時間");
+		    if(!append)printer.printRecord("社員番号","名前","対象年月","合計勤務時間");
 		    for(WorkRecord record: records) {
 		    	printer.printRecord(record.getEmployeeId(), record.getEmployeeName(), record.getWorkYearMonth(), record.getWorkingTime());
 			}
